@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CC57481B2761E4A200F0E588 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC57481A2761E4A200F0E588 /* main.cpp */; };
+		CC57482C276345B000F0E588 /* BitBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC57482A276345B000F0E588 /* BitBuffer.cpp */; };
+		CC57482D276345B000F0E588 /* QrSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC57482B276345B000F0E588 /* QrSegment.cpp */; };
+		CC57482F276345D300F0E588 /* QrCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC57482E276345D300F0E588 /* QrCode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,14 @@
 /* Begin PBXFileReference section */
 		CC5748172761E4A200F0E588 /* The Nested QR Code With Color */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "The Nested QR Code With Color"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC57481A2761E4A200F0E588 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CC5748212761E73D00F0E588 /* The Nested QR Code With Color.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Nested QR Code With Color.entitlements"; sourceTree = "<group>"; };
+		CC5748232761EBDF00F0E588 /* BitBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitBuffer.hpp; sourceTree = "<group>"; };
+		CC5748252761EC8600F0E588 /* QrCode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QrCode.hpp; sourceTree = "<group>"; };
+		CC5748262761EC8600F0E588 /* BitBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitBuffer.hpp; sourceTree = "<group>"; };
+		CC5748272761EC8600F0E588 /* QrSegment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QrSegment.hpp; sourceTree = "<group>"; };
+		CC57482A276345B000F0E588 /* BitBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitBuffer.cpp; sourceTree = "<group>"; };
+		CC57482B276345B000F0E588 /* QrSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QrSegment.cpp; sourceTree = "<group>"; };
+		CC57482E276345D300F0E588 /* QrCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QrCode.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +68,15 @@
 		CC5748192761E4A200F0E588 /* The Nested QR Code With Color */ = {
 			isa = PBXGroup;
 			children = (
+				CC5748212761E73D00F0E588 /* The Nested QR Code With Color.entitlements */,
 				CC57481A2761E4A200F0E588 /* main.cpp */,
+				CC5748262761EC8600F0E588 /* BitBuffer.hpp */,
+				CC57482E276345D300F0E588 /* QrCode.cpp */,
+				CC57482A276345B000F0E588 /* BitBuffer.cpp */,
+				CC57482B276345B000F0E588 /* QrSegment.cpp */,
+				CC5748252761EC8600F0E588 /* QrCode.hpp */,
+				CC5748272761EC8600F0E588 /* QrSegment.hpp */,
+				CC5748232761EBDF00F0E588 /* BitBuffer.hpp */,
 			);
 			path = "The Nested QR Code With Color";
 			sourceTree = "<group>";
@@ -120,6 +139,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC57481B2761E4A200F0E588 /* main.cpp in Sources */,
+				CC57482F276345D300F0E588 /* QrCode.cpp in Sources */,
+				CC57482C276345B000F0E588 /* BitBuffer.cpp in Sources */,
+				CC57482D276345B000F0E588 /* QrSegment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,20 +262,120 @@
 		CC57481F2761E4A200F0E588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "The Nested QR Code With Color/The Nested QR Code With Color.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4X86PTD6U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4_4/include/opencv4/**";
+				LIBRARY_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4_4/lib/**";
+				OTHER_LDFLAGS = (
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_videostab",
+					"-lopencv_aruco",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dpm",
+					"-lopencv_face",
+					"-lopencv_photo",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_line_descriptor",
+					"-lopencv_optflow",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_datasets",
+					"-lopencv_dnn",
+					"-lopencv_plot",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_video",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_highgui",
+					"-lopencv_videoio",
+					"-lopencv_flann",
+					"-lopencv_xobjdetect",
+					"-lopencv_imgcodecs",
+					"-lopencv_objdetect",
+					"-lopencv_xphoto",
+					"-lopencv_imgproc",
+					"-lopencv_core",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4/include/opencv4/opencv2/**";
 			};
 			name = Debug;
 		};
 		CC5748202761E4A200F0E588 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "The Nested QR Code With Color/The Nested QR Code With Color.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4X86PTD6U;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4_4/include/opencv4/**";
+				LIBRARY_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4_4/lib/**";
+				OTHER_LDFLAGS = (
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_videostab",
+					"-lopencv_aruco",
+					"-lopencv_bgsegm",
+					"-lopencv_bioinspired",
+					"-lopencv_ccalib",
+					"-lopencv_dnn_objdetect",
+					"-lopencv_dpm",
+					"-lopencv_face",
+					"-lopencv_photo",
+					"-lopencv_fuzzy",
+					"-lopencv_hfs",
+					"-lopencv_img_hash",
+					"-lopencv_line_descriptor",
+					"-lopencv_optflow",
+					"-lopencv_reg",
+					"-lopencv_rgbd",
+					"-lopencv_saliency",
+					"-lopencv_stereo",
+					"-lopencv_structured_light",
+					"-lopencv_phase_unwrapping",
+					"-lopencv_surface_matching",
+					"-lopencv_tracking",
+					"-lopencv_datasets",
+					"-lopencv_dnn",
+					"-lopencv_plot",
+					"-lopencv_xfeatures2d",
+					"-lopencv_shape",
+					"-lopencv_video",
+					"-lopencv_ml",
+					"-lopencv_ximgproc",
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_highgui",
+					"-lopencv_videoio",
+					"-lopencv_flann",
+					"-lopencv_xobjdetect",
+					"-lopencv_imgcodecs",
+					"-lopencv_objdetect",
+					"-lopencv_xphoto",
+					"-lopencv_imgproc",
+					"-lopencv_core",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/opt/homebrew/Cellar/opencv/4.5.4/include/opencv4/opencv2/**";
 			};
 			name = Release;
 		};
